@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mansi Gavade | AI/ML Portfolio</title>
+<meta name="description" content="Portfolio of Mansi Gavade focused on practical machine learning and intelligent systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='portfolio.css') }}">
+</head>
+<body>
+<div class="background-glow bg-one"></div>
+<div class="background-glow bg-two"></div>
+
+<header class="site-header">
+    <a class="brand" href="#home">Mansi Gavade</a>
+    <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">Menu</button>
+    <nav id="mainNav" class="site-nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#ai-analysis">AI Analyzer</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <section id="home" class="hero">
+        <div class="hero-text reveal">
+            <p class="eyebrow">AI/ML Portfolio</p>
+            <h1>My Portfolio</h1>
+            <p class="intro">
+                I am <strong>Mansi Gavade</strong>, an Artificial Intelligence and Machine Learning student with hands-on experience in predictive modeling, data analysis, and intelligent application development. I focus on building accurate, scalable, and user-friendly solutions for real-world problems.
+            </p>
+            <div class="hero-actions">
+                <a class="btn btn-solid" href="#projects">View Projects</a>
+                <a class="btn btn-outline" href="{{ url_for('static', filename='resume.pdf') }}" download>Download Resume</a>
+            </div>
+        </div>
+
+        <figure class="hero-photo reveal">
+            <img src="{{ url_for('static', filename='mansi.jpg') }}" alt="Mansi Gavade portrait">
+        </figure>
+    </section>
+
+    <section id="about" class="panel reveal">
+        <h2>About</h2>
+        <div class="about-grid">
+            <p>
+                I work on end-to-end ML solutions, from raw data preprocessing and feature engineering to model training and lightweight deployment. I enjoy turning complex ML concepts into tools that are easy to use and explain.
+            </p>
+            <ul class="meta-list">
+                <li><span>Location</span>Maharashtra, India</li>
+                <li><span>Email</span><a href="mailto:mansigavade21@gmail.com">mansigavade21@gmail.com</a></li>
+                <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/mansi-gavade-931967322/" target="_blank" rel="noreferrer">linkedin.com/in/mansi-gavade-931967322</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="skills" class="panel reveal">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <article class="skill-card">
+                <h3>Programming</h3>
+                <div class="bar-row"><span>Python</span><div class="bar"><i data-level="90"></i></div></div>
+                <div class="bar-row"><span>SQL / MySQL</span><div class="bar"><i data-level="80"></i></div></div>
+                <div class="bar-row"><span>HTML / CSS / JS</span><div class="bar"><i data-level="85"></i></div></div>
+            </article>
+            <article class="skill-card">
+                <h3>ML Stack</h3>
+                <div class="bar-row"><span>Scikit-learn</span><div class="bar"><i data-level="88"></i></div></div>
+                <div class="bar-row"><span>Pandas + NumPy</span><div class="bar"><i data-level="85"></i></div></div>
+                <div class="bar-row"><span>Regression / Classification</span><div class="bar"><i data-level="86"></i></div></div>
+            </article>
+            <article class="skill-card">
+                <h3>Tools</h3>
+                <div class="chips">
+                    <span>Flask</span>
+                    <span>Git / GitHub</span>
+                    <span>Jupyter</span>
+                    <span>VS Code</span>
+                    <span>Matplotlib</span>
+                    <span>Postman</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="projects" class="panel reveal">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <article class="project-card">
+                <h3>College Enquiry Chatbot</h3>
+                <p>Built a chatbot to automate college FAQs with structured conversational flows and NLP-powered intent handling.</p>
+                <p class="tech">Python, NLP, FAQ Logic</p>
+            </article>
+            <article class="project-card">
+                <h3>Student Performance Prediction and CGPA Calculator</h3>
+                <p>Created a model-backed calculator for student performance insights with a practical workflow for quick academic evaluation.</p>
+                <p class="tech">Python, Scikit-learn, Data Analytics</p>
+            </article>
+            <article class="project-card">
+                <h3>Pumpkin Seed Classification System</h3>
+                <p>Implemented a classification pipeline using geometric features and deployed predictions through a Flask interface.</p>
+                <p class="tech">Flask, NumPy, Pandas, Scikit-learn</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="ai-analysis" class="panel reveal">
+        <h2>AI Project Analyzer</h2>
+        <p class="section-note">Describe an ML project and get a quick structured analysis from the backend model.</p>
+        <div class="analyzer-wrap">
+            <input id="projectInput" type="text" placeholder="Example: ML model to predict crop yield from weather data">
+            <button id="analyzeBtn" class="btn btn-solid" type="button">Analyze</button>
+        </div>
+        <div id="result" class="result-box" aria-live="polite"></div>
+    </section>
+
+    <section id="contact" class="panel reveal contact">
+        <h2>Contact</h2>
+        <p>If you want to collaborate on ML projects, internships, or student research, reach out by email or LinkedIn.</p>
+        <div class="contact-links">
+            <a class="btn btn-outline" href="mailto:mansigavade21@gmail.com">Email Me</a>
+            <a class="btn btn-solid" href="https://www.linkedin.com/in/mansi-gavade-931967322/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Designed and developed by Mansi Gavade | <span id="year"></span></p>
+</footer>
+
+<script src="{{ url_for('static', filename='portfolio.js') }}"></script>
+</body>
+</html>
